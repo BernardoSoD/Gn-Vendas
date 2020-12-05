@@ -1,0 +1,6 @@
+li:hover{
+    border-bottom: 2px dotted black;
+}
+.card{
+    width: 16rem;
+}

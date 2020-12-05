@@ -1,6 +1,9 @@
 const express = require('express');
-const app = express();
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
 
 const db = mysql.createPool({
     host: 'localhost',
@@ -9,8 +12,19 @@ const db = mysql.createPool({
     database: 'GnVendas'
 });
 
+app.use(express.json());
+app.use(cors());
+
+//tenta isso aki dps: app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
+
+
+//db.query('INSERT INTO...', (err, result) => {
+//  if (err) throw err;
+//  qlqr coisa aki
+//})
+
 app.get("/", (req,res) => {
-    console.log('someone entered!');
     res.send('oi');
 });
 
