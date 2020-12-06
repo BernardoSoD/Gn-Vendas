@@ -41,11 +41,11 @@ O server vai rodar no [http://localhost:3001](http://localhost:3001).
 - Escolha o caminho até o arquivo `gnvendas.sql`,
 - Escolha o "Default Target Schema" ou crie um novo clicando em "New..." e nomeando como "gnvendas" (que será onde o banco de dados será colocado) 
 - Clique em "Start Import" para começar a importação dos dados \
-OBS: É necessário que este banco de dados seja ligado antes da utilização do server para funcionar corretamente.
+#### OBS: É necessário que este banco de dados seja ligado antes da utilização do server para funcionar corretamente.
 
-### OBS²: Para o banco de dados funcionar você deve usar o user "root" com a senha "password".
+#### OBS²: Para o banco de dados funcionar você deve usar o user "root" com a senha "password".
 
-### Caso você se depare com este erro: "Client does not support authentication protocol requested by server; consider upgrading MySQL client" recomendo ler esta resposta:
+#### Caso você se depare com este erro: "Client does not support authentication protocol requested by server; consider upgrading MySQL client" recomendo ler esta resposta:
 https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
 
 Este projeto foi criado com o [Create React App](https://github.com/facebook/create-react-app).
