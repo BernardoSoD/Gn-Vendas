@@ -2,7 +2,7 @@
 
 Um projeto feito em React no Frontend e NodeJS/MySQL no Backend para usar a API do Gerencianet para gerar boletos.
 
-Para rodar este projeto, clone este repositório:
+## Para rodar este projeto, clone este repositório:
 
 ```
 git clone https://github.com/BernardoSoD/Gn-Vendas.git
@@ -20,7 +20,7 @@ O client vai rodar no [http://localhost:3000](http://localhost:3000).
 
 Você pode também fazer a build de produção com `npm run build`, ela será colocada na pasta `build`.
 
-Para instalar o servidor da API:
+## Para instalar o servidor da API:
 
 ```
 cd ..
@@ -31,7 +31,8 @@ npm install
 Agora quando quiser abrir o server é so ir pra pasta dele e digitar `npm run dev` (para rodar com nodemon) ou `npm run start`. \
 O server vai rodar no [http://localhost:3001](http://localhost:3001).
 
-Para instalar o banco de dados MySQL via MySQL Workbench:
+## Para instalar o banco de dados MySQL via MySQL Workbench:
+
 - Abra uma nova conexão,
 - Vá para Server-> Data Import,
 - Selecione "Import from a Self-Contained File",
