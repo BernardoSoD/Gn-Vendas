@@ -17,20 +17,32 @@ class BuyPrompt extends React.Component{
         const usuario = this.state.Username;
         const usuariocpf = this.state.CPF;
         const usuariophone = this.state.Phone;
-
-        //validar oq to passando pelo post
-        Axios.post('http://localhost:3001/gnapi', {
+        if (usuario.length === 0 || usuariocpf.length === 0 || usuariophone.length === 0){
+            alert("Todos os campos devem ser preenchidos!");
+        } else if (!(/^[ ]*(.+[ ]+)+.+[ ]*$/.test(usuario))){
+            alert('Nome inválido');
+        } else if (usuariocpf.length < 11 || !(/^[1-9]{2}?[0-9]{9}$/.test(usuariocpf))){
+            alert('CPF inválido');
+        } else if (!(/^[1-9]{2}9?[0-9]{8}$/.test(usuariophone))){
+            alert('Número de contato inválido');
+        } else {
+            Axios.post('http://localhost:3001/gnapi', {
             Username: usuario,
             CPF: usuariocpf,
             Phone: usuariophone,
             ProductName: this.props.ProductName,
             Price: this.props.Price
-        }).then(response => {
-            let resultline = document.getElementById("ResultLine");
-            resultline.textContent = `Id do boleto: ${response.data[0]} | Link para o pdf do boleto: ${response.data[1]}`;
-            resultline.style.display = "block";
-        });
-        document.getElementById(`fecharPrompt${this.props.index}`).click();
+            }).then(response => {
+                let resultline = document.getElementById("ResultLine");
+                if (response.data[0]){
+                    resultline.textContent = `Erro: ${response.data[1]} | Descrição do erro: ${response.data[2]}`;
+                } else {
+                    resultline.textContent = `Id do boleto: ${response.data[1]} | Link para o pdf do boleto: ${response.data[2]}`;
+                }
+                resultline.style.display = "block";
+            });
+            document.getElementById(`fecharPrompt${this.props.index}`).click();
+        }
     }
 
     render(){
