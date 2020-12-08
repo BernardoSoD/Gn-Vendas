@@ -40,7 +40,7 @@ O server vai rodar no [http://localhost:3001](http://localhost:3001).
 - Selecione "Import from a Self-Contained File",
 - Escolha o caminho até o arquivo `gnvendas.sql`,
 - Escolha o "Default Target Schema" ou crie um novo clicando em "New..." e nomeando como "gnvendas" (que será onde o banco de dados será colocado) 
-- Clique em "Start Import" para começar a importação dos dados \
+- Clique em "Start Import" para começar a importação dos dados
 #### OBS: É necessário que este banco de dados seja ligado antes da utilização do server para funcionar corretamente.
 
 #### OBS²: Para o banco de dados funcionar você deve usar o user "root" com a senha "password".
